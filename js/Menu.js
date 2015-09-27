@@ -47,11 +47,11 @@ Menu = Class.extend({
         this.hide();
 
         if (mode == 'single') {
-            gGameEngine.botsCount = 3;
-            gGameEngine.playersCount = 1;
-        } else {
             gGameEngine.botsCount = 2;
-            gGameEngine.playersCount = 2;
+            gGameEngine.playersCount = 0;
+        } else {
+            gGameEngine.botsCount = 4;
+            gGameEngine.playersCount = 0;
         }
 
         gGameEngine.playing = true;
@@ -101,8 +101,8 @@ Menu = Class.extend({
             that.setMode('single');
         });
 
-        var singleTitle1 = new createjs.Text("single", "16px Helvetica", "#ff4444");
-        var singleTitle2 = new createjs.Text("player", "16px Helvetica", "#ffffff");
+        var singleTitle1 = new createjs.Text("2 BOTS", "16px Helvetica", "#ff4444");
+        var singleTitle2 = new createjs.Text("", "16px Helvetica", "#ffffff");
         var singleTitleWidth = singleTitle1.getMeasuredWidth() + singleTitle2.getMeasuredWidth();
         var modeTitlesY = modesY + modeSize - singleTitle1.getMeasuredHeight() - 20;
 
@@ -135,8 +135,8 @@ Menu = Class.extend({
             that.setMode('multi');
         });
 
-        var multiTitle1 = new createjs.Text("multi", "16px Helvetica", "#99cc00");
-        var multiTitle2 = new createjs.Text("player", "16px Helvetica", "#ffffff");
+        var multiTitle1 = new createjs.Text("4 BOTS", "16px Helvetica", "#99cc00");
+        var multiTitle2 = new createjs.Text("", "16px Helvetica", "#ffffff");
         var multiTitleWidth = multiTitle1.getMeasuredWidth() + multiTitle2.getMeasuredWidth();
 
         multiTitle1.x = multiX + (modeSize - multiTitleWidth) / 2;
